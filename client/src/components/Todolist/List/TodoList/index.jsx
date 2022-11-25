@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import EraseButton from '../EraseButton'
 import "./TodoList.css"
 import { UseStateContext } from '../../../../context/ContextProvider'
-import { MdDownloadDone } from "react-icons/md"
+import { MdDone } from "react-icons/md"
 import Axios from 'axios'
 
 const TodoList = () => {
@@ -34,18 +34,20 @@ const TodoList = () => {
     }
 
     const handleDeleteTask = (idtoDoList)=>{
-        Axios.post("https://cooper-mysql.herokuapp.com/toDoList/delete",{
-            idTask: idtoDoList
-        })
-            .then((resp)=>{
-                console.log(resp)
-                if(resp.data.returnCode === 1){
-                    Axios.post("https://cooper-mysql.herokuapp.com/toDoList/get")
-                    .then((resp)=>{
-                        setToDoList(resp.data.result)
-                    })
-                }
+        if(toDoList.length > 1){
+            Axios.post("https://cooper-mysql.herokuapp.com/toDoList/delete",{
+                idTask: idtoDoList
             })
+                .then((resp)=>{
+                    console.log(resp)
+                    if(resp.data.returnCode === 1){
+                        Axios.post("https://cooper-mysql.herokuapp.com/toDoList/get")
+                        .then((resp)=>{
+                            setToDoList(resp.data.result)
+                        })
+                    }
+                })
+        }
     }
 
   return (
@@ -87,7 +89,7 @@ const TodoList = () => {
                 ))}
                 <div className='newTask-container'>
                     <input id='newTask-input'  className='newTask-text-input' type={'text'} placeholder='Add new task'/>
-                    <MdDownloadDone size={20} onClick={()=>{handleNewTask()}} className='newTask-button' />
+                    <MdDone size={18} onClick={()=>{handleNewTask()}} className='newTask-button' />
                 </div>
             </div>
         :
