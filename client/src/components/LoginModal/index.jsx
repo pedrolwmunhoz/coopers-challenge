@@ -86,14 +86,16 @@ const LoginModal = () => {
     <div className='modal-content'>
         <div className='loginModal-closeButtoncontainer'>
             <button className='loginModal-buttonClose' onClick={()=>{
-                document.getElementById("modalLogin").style.display = "none";
-                document.getElementById("invalidModal-email").style.display= "none"
-                document.getElementById("invalidModal-pass").style.display = "none"
+                if(login){
+                    document.getElementById("modalLogin").style.display = "none";
+                }else{
+                    document.getElementById("modalLogin").style.display = "none";
+                    document.getElementById("invalidModal-email").style.display= "none"
+                    document.getElementById("invalidModal-pass").style.display = "none"
+                }
                 setRegister(false)
             }
-            }>
-                close
-            </button>
+            }>close</button>
         </div>
         <div className='loginModal-imgTitleContainer'>
             <img className='loginModal-img' alt="img" src = {require(`../../data/image6.png`)}/>

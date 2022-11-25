@@ -1,12 +1,52 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import EraseButton from '../EraseButton'
 import "./TodoList.css"
 import { UseStateContext } from '../../../../context/ContextProvider'
+import { MdDownloadDone } from "react-icons/md"
+import Axios from 'axios'
 
 const TodoList = () => {
     const { login } = UseStateContext()
     const [toDoList, setToDoList] = useState(["this is a new task", "Develop the To-do List page", "Create the drag-and-drop function",
     "Add new tasks", "Delete itens", "Erase all","Checked item goes to Done list","This item label may be edited","Editing an item..."])
+
+    useEffect(()=>{
+        Axios.post("https://cooper-mysql.herokuapp.com/toDoList/get")
+            .then((resp)=>{
+                setToDoList(resp.data.result)
+            })
+    },[])
+
+    const handleNewTask = ()=>{
+        const task = document.getElementById('newTask-input').value
+        Axios.post("https://cooper-mysql.herokuapp.com/toDoList/post",{
+            task: task
+        })
+            .then((resp)=>{
+                if(resp.data.returnCode === 1){
+                    Axios.post("https://cooper-mysql.herokuapp.com/toDoList/get")
+                    .then((resp)=>{
+                        setToDoList(resp.data.result)
+                    })
+                }
+            })
+        document.getElementById('newTask-input').value = ''
+    }
+
+    const handleDeleteTask = (idtoDoList)=>{
+        Axios.post("https://cooper-mysql.herokuapp.com/toDoList/delete",{
+            idTask: idtoDoList
+        })
+            .then((resp)=>{
+                console.log(resp)
+                if(resp.data.returnCode === 1){
+                    Axios.post("https://cooper-mysql.herokuapp.com/toDoList/get")
+                    .then((resp)=>{
+                        setToDoList(resp.data.result)
+                    })
+                }
+            })
+    }
 
   return (
     <div className='list toDoList'>
@@ -33,15 +73,22 @@ const TodoList = () => {
         </div>
         {login ?
             <div className='list-checkbox'>
-                {toDoList.map((i,index)=>(
+                {toDoList?.map((i,index)=>(
                     <div key={index} className="container">
                         <div className='toDo-checkbox-container'>
                             <input readOnly type="checkbox"/>
                             <span className="toDo-checkmark"></span>
-                            <p className='task-text toDo-task-text'>{i}</p>
+                            <p className='task-text toDo-task-text'>{i.task}</p>
+                            <button onClick={()=>{
+                                handleDeleteTask(i.idtoDoList)
+                            }} style={{color:'#999999', cursor: 'pointer'}}>delete</button>
                         </div>
                     </div>
                 ))}
+                <div className='newTask-container'>
+                    <input id='newTask-input'  className='newTask-text-input' type={'text'} placeholder='Add new task'/>
+                    <MdDownloadDone size={20} onClick={()=>{handleNewTask()}} className='newTask-button' />
+                </div>
             </div>
         :
             <></>

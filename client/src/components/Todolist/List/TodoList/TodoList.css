@@ -13,6 +13,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: flex;
+  justify-content: space-between;
 }
 
 .toDo-checkbox-container input {
@@ -64,6 +66,36 @@ input:checked ~ .toDo-checkmark{
 
 .container input:checked ~ .toDo-task-text{
   font-weight: 700;
+}
+
+.newTask-container{
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.newTask-text-input{
+  width: 100%;
+  margin-left: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  background-color: transparent;
+  color: black;
+}
+.newTask-text-input:focus{
+  outline: none;
+}
+.newTask-text-input::placeholder{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  margin-left: 25px;
+  color: black;
 }
 
 @media screen and (min-width: 800px) {
