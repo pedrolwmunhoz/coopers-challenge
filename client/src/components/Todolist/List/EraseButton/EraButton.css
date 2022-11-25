@@ -1,0 +1,14 @@
+.erase-button{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 10px;
+    width: 100%;
+    padding: 5%;
+    cursor: pointer;
+}

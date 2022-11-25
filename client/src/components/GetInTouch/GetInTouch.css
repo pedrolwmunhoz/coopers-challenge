@@ -1,0 +1,194 @@
+.getInTouch-container{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+}
+.getInTouch-imageContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+}
+.getInTouch-content{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 16px rgba(6, 21, 43, 0.08);
+    border-radius: 4px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
+.getInTouch-img{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: -80px;
+}
+.getInTouch-TitleContainer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    gap: 10px;
+}
+.getInTouch-svgContainer{
+    margin-right: 20px;
+}
+.getInTouch-textContainer{
+    display: flex;
+    flex-direction: column;
+}
+.getInTouch-text{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+.getInTouch-textTitle{
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.getInTouch-textUpper{
+    font-weight: 500;
+}
+
+.inputs-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.getInTouch-input{
+    width: 100%;
+    padding: 9px 15px;
+    background: #FFFFFF;
+    border: 1px solid #06152B;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #9A9A9A;
+
+}
+.getInTouch-input:focus{
+    outline: 0;
+}
+.getInTouch-inputMensageContainer{
+    height: 150px;
+}
+.getInTouch-inputMensage{
+    width: 100%;
+    overflow: scroll;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #9A9A9A;
+    font-weight: 300;
+}
+.getInTouch-inputMensage{
+    resize: vertical;
+    width: 100%;
+    height: 100%;
+}
+.getInTouch-inputMensage::-webkit-scrollbar{
+    display: none;
+}
+.getInTouch-inputMensage:focus{
+    outline: 0;
+    border: 0;
+}
+
+.emailTell-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.emailTell{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sendNow-buttonContainer{
+    display: flex;
+    width: 100%;
+}
+.sendNow-button{
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4px;
+    background-color: #46BD62;
+    color: #ffff;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+    .getInTouch-container{
+        margin-top: 250px;
+    }
+    .getInTouch-text{
+        font-size: 16px;
+        line-height: 29px;
+    }
+    .getInTouch-textTitle{
+        letter-spacing: 0.08em;
+        font-size: 24px;
+    }
+    .getInTouch-input{
+        padding: 13px 18px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .getInTouch-inputMensage{
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .getInTouch-img{
+        width: 190px;
+        height: 190px;
+        top: -80px;
+    }
+    .getInTouch-content{
+        width: 700px;
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-bottom: 60px;
+        gap: 30px;
+    }
+    .inputs-container{
+        gap: 15px;
+    }
+    .sendNow-button{
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+}

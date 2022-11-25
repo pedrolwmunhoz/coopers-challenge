@@ -1,0 +1,120 @@
+.homeContainer {
+    padding-top: 100px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.teste{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.text-buttonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 600px;
+}
+
+.organize-text{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 34px;
+}
+
+.yourJobs-text{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 34px;
+    color:#4AC959;
+    margin-left: 5px;
+}
+
+.theOnlyWay-text{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+.button-TodoList{
+    background: #4AC959;
+    border-radius: 10px;
+    Width: 150px;
+    Height: 34px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-left: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.imageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.image-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageHome{
+    width: 100px;
+    position: absolute;
+}
+
+@media screen and (min-width: 800px) {
+    .homeContainer {
+        padding-top: 50px;
+        padding-left: 50px ;
+    }
+    .imageHome{
+        width: 280px;
+    }
+    .organize-text{
+        font-size: 80px;
+        line-height: 64px;
+    }
+    .yourJobs-text{
+        font-size: 60px;
+        line-height: 64px;
+    }
+    .theOnlyWay-text{
+        font-size: 24px;
+        line-height: 24px;
+        margin-top: 55px;
+    }
+    .button-TodoList{
+        Width: 300px;
+        Height: 64px;
+        font-size: 24px;
+        line-height: 29px;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .imageHome{
+        width: 400px;
+    }
+}

@@ -1,0 +1,120 @@
+.card-container{
+    width: 130px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 8px 8px 24px rgba(12, 41, 208, 0.16);
+    border-radius: 16px;
+    background: #FFFFFF;
+}
+.card-image{
+    width: 100%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.iconImage-container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.cooperIcon{
+    position: absolute;
+    margin-top: 10px;
+}
+
+.card-content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.cardText-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.function-button{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9px;
+    letter-spacing: 1px;
+    border: 1px solid #9499B3;
+    color: #9499B3;
+    padding: 2px 8px;
+    border-radius: 16px;
+}
+
+.card-text{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    color: #312F4F;
+}
+
+.readMore-button{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 150%;
+    color: #42D76B;
+    background-color: #ffff;
+}
+@media screen and (min-width: 800px) {
+    .card-container{
+        width: 260px;
+        height: 330px;
+    }
+    .function-button{
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 1px;
+        padding: 5px 12px;
+        border-radius: 16px;
+    }
+    .card-text{
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 22px;
+    }
+    .readMore-button{
+        font-size: 14px;
+        line-height: 150%;
+    }
+}
+@media screen and (min-width: 1300px) {
+    .card-container{
+        width: 320px;
+        height: 390px;
+    }
+}
+@media screen and (min-width: 1490px) {
+    .card-container{
+        width: 360px;
+        height: 430px;
+    }
+    .function-button{
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 1px;
+        padding: 6px 12px;
+        border-radius: 16px;
+    }
+    .card-text{
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .readMore-button{
+        font-size: 16px;
+        line-height: 150%;
+    }
+}

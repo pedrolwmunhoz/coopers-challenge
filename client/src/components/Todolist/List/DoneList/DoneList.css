@@ -1,0 +1,91 @@
+.doneList{
+    border-top: 15px solid #4AC959;
+}
+
+.done-paragraph-text{
+    font-weight: 300;
+}
+
+.done-checkbox-container {
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .done-checkbox-container input {
+    position: absolute;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+  }
+
+  .done-checkmark {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: none;
+    background-color: #4AC959;
+  }
+  input:checked ~ .done-checkmark{
+    border: 2px solid #4AC959;
+  }
+
+  .done-checkbox-container:hover input ~ .done-checkmark {
+    background-color: #40b14d;
+  }
+  .done-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .done-checkbox-container input:checked ~ .done-checkmark:after {
+    display: block;
+  }
+  .done-checkbox-container .done-checkmark:after {
+    left: 5px;
+    top: 0px;
+    width: 2px;
+    height: 7px;
+    border: 2px solid #ffffff;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  
+  .container input:checked ~ .done-task-text{
+    font-weight: 700;
+  }
+  
+  @media screen and (min-width: 800px) {
+    .done-checkmark {
+      height: 25px;
+      width: 25px;
+    }
+    .done-checkbox-container input {
+      height: 25px;
+      width: 25px;
+    }
+    .done-checkbox-container .done-checkmark:after {
+      left: 6px;
+      top: 4px;
+      width: 5px;
+      height: 10px;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
