@@ -5,6 +5,8 @@ import {UseStateContext} from "../../context/ContextProvider"
 
 
 const LoginModal = () => {
+    
+
 
     const { login, setLogin } = UseStateContext()
 
@@ -29,6 +31,7 @@ const LoginModal = () => {
                 }
                 else{
                     setLogin(true)
+                    window.localStorage.setItem('logged', true)
                 }
             })
         }
@@ -104,7 +107,13 @@ const LoginModal = () => {
                 <h2 className='loginModal-titleText loginModal-accessTitle'>to access your list</h2>
             </div>
         </div>
-        {login ? <div className='loginModal-titleText'>Login sucess</div> :
+        {login ?<>
+                    <div className='loginModal-titleText'>Login sucess</div>
+                    <button style={{maxWidth: '30%'}} className='loginModal-signButton' onClick={()=>{
+                        setLogin(false)
+                        window.localStorage.clear()
+                    }}>Logoff</button>
+                </> :
             <div className='loginModal-inputsContainer'>
                 <div className='loginModal-inputContent'>
                     <p className='loginModal-pText'>User:</p>
